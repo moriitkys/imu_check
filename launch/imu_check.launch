@@ -1,0 +1,10 @@
+<launch>
+  <node name="serial_node" pkg="rosserial_python" type="serial_node.py" output="screen" />
+    <param name = "port" value = "/dev/ttyACM0" /> 
+  <node name="rqt_plot"
+        pkg="rqt_plot"
+        type="rqt_plot"
+        args="/imu/data/angular_velocity" />
+        args="/imu/data/linear_acceleration" />
+  <node name="imu_check" pkg="imu_check" type="imu_check_node" output="screen" />
+</launch>
